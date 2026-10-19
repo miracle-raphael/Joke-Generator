@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Miracle Raphael">
+        <meta name="description" content=" Building A Joke Generator">
+        <title>THE-LAUGH-LAB</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.png" type="image/x-icon">
+</head>
+
+
+     <body class="bg-[hsl(47,98%,77%)]">
+        <section class="mi">
+            <nav class="navbar">
+
+    <div class="emoji-wrapper">
+
+        <div class="emoji-track">
+
+            <span>😂</span>
+            <span>🤣</span>
+            <span>😭</span>
+            <span>🤡</span>
+            <span>😂</span>
+            <span>🫠</span>
+            <span>🤣</span>
+            <span>😂</span>
+            <span>😭</span>
+            <span>🤪</span>
+
+        </div>
+
+        <div class="emoji-track">
+
+            <span>😂</span>
+            <span>🤣</span>
+            <span>😭</span>
+            <span>🤡</span>
+            <span>😂</span>
+            <span>🫠</span>
+            <span>🤣</span>
+            <span>😂</span>
+            <span>😭</span>
+            <span>🤪</span>
+
+        </div>
+
+    </div>
+
+    <h1 class="logo
+    relative
+    flex
+    items-center
+    gap-10
+    z-10
+    text-5xl
+    md:text-7xl
+    lg:text-8xl
+">
+    MIRACLE <img 
+                src="https://res.cloudinary.com/qo5vllhj/image/upload/v1788730311/The_joke_s_on_you_no_bg_tfrbco.png" 
+                class="w-24 h-auto sm:w-32" 
+                alt="logo"
+            >
+</h1>
+</nav>
+</section>
+
+    <div class="emoji-rain">
+
+        <span>😂</span>
+        <span>🤣</span>
+        <span>😂</span>
+        <span>😭</span>
+        <span>🤣</span>
+        <span>😂</span>
+        <span>🤪</span>
+        <span>😂</span>
+        <span>🤣</span>
+        <span>😂</span>
+    </div>
+
+    <div class="emoji-rain">
+
+        <span>😂</span>
+        <span>🤣</span>
+        <span>😂</span>
+        <span>😭</span>
+        <span>🤣</span>
+        <span>😂</span>
+        <span>🤪</span>
+        <span>😂</span>
+        <span>🤣</span>
+        <span>😂</span>
+
+    </div>
+
+    <section class="flex gap-8  items-center mb-8 relative z-10 sm:gap-28 lg:gap-80">
+   <a href="index.html">
+    <img 
+        src="https://res.cloudinary.com/qo5vllhj/image/upload/v1788794690/left-arrow-icon-no-bg_xm5lf8.png" 
+        alt="My image"
+        class="w-10 h-10  cursor-pointer hover:scale-105 transition sm:w-24 sm:h-24">
+</a>
+<div>
+    
+        <h1 class="uppercase text-center text-xl font-semibold sm:text-4xl">Welcome Mr. Favour</h1>
+        <p class="text-center font-[Quicksand] text-x font-semibold sm:text-lg sm:font-extrabold">Sit and listen to my funny but dry jokes</p>
+        </div>
+    </section>
+
+
+  
+
+    <main class="flex flex-col items-center justify-center h-[450px] mb-7 w-[90%] max-w-md sm:max-w-3xl mx-auto lg:max-w-5xl bg-[linear-gradient(135deg,#FF0068_0%,#FF212E_30%,#FA8803_50%,#7BB06C_70%,#00A9E4_100%)] rounded-xl shadow-[0_20px_40px_rgba(0,0,0,0.25)] relative z-10">
+
+  <!-- Joke Categories -->
+  <div class="w-full flex justify-start sm:justify-center gap-2 sm:gap-4 px-4 pt-5 overflow-x-auto scroll-smooth p-8 scrollbar-hide box-border">
+
+      <button class="category-btn shrink-0 px-3 py-2 rounded-full border-2 border-black font-semibold bg-white" data-category="Any">Any</button>
+      <button class="category-btn shrink-0 px-3 py-2 rounded-full border-2 border-black font-semibold" data-category="Programming">Programming</button>
+      <button class="category-btn shrink-0 px-3 py-2 rounded-full border-2 border-black font-semibold" data-category="Misc">Misc</button>
+      <button class="category-btn shrink-0 px-3 py-2 rounded-full border-2 border-black font-semibold" data-category="Pun">Pun</button>
+      <button class="category-btn shrink-0 px-3 py-2 rounded-full border-2 border-black font-semibold" data-category="Spooky">Spooky</button>
+
+  </div>
+
+  <div class="flex flex-col items-center justify-center text-center sm:w-full flex-1 px-6">
+    <p id="joke" class="text-xl font-semibold">Why did the developer go broke?</p>
+    <p id="answer" class="text-xl font-bold text-green-700 mt-6">Because he used up all his cache.</p>
+  </div>
+
+
+
+    <!-- Buttons -->
+    <div class="flex gap-10 sm:gap-24 mt-auto mb-6">
+
+        <!-- Previous joke -->
+        <button
+            id="previousBtn"
+            type="button"
+            class="border-4 border-black p-4 rounded-full hover:scale-105 transition"
+            aria-label="Previous joke">
+            ←
+        </button>
+
+
+        <!-- Generate joke -->
+        <button
+            id="generateBtn"
+            type="button"
+            class="border-4 border-black p-4 rounded-full hover:scale-105 transition"
+            aria-label="Generate a new joke">
+            <img src="https://res.cloudinary.com/qo5vllhj/image/upload/v1788779892/button_hld50e.png" class="w-16 h-auto" alt="image">
+        </button>
+
+
+        <!-- Copy joke -->
+        <button
+            id="copyBtn"
+            type="button"
+            class="border-4 border-black p-4 rounded-full hover:scale-105 transition"
+            aria-label="Copy joke">
+            📋
+        </button>
+
+    </div>
+
+</main>
+
+
+<script>
+
+    // =========================
+    // GET HTML ELEMENTS
+    // =========================
+
+    const joke = document.getElementById("joke");
+    const answer = document.getElementById("answer");
+
+    const generateBtn = document.getElementById("generateBtn");
+    const copyBtn = document.getElementById("copyBtn");
+    const previousBtn = document.getElementById("previousBtn");
+
+    const categoryButtons = document.querySelectorAll(".category-btn");
+
+
+    // =========================
+    // JOKE STORAGE
+    // =========================
+
+    let jokes = [];
+
+    let currentJoke = -1;
+
+    let selectedCategory = "Any";
+
+
+    
+
+    // =========================
+    // CATEGORY BUTTONS
+    
+
+    categoryButtons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            // Get selected category
+            selectedCategory = button.dataset.category;
+
+
+            // Remove active style from all buttons
+            categoryButtons.forEach(btn => {
+
+                btn.classList.remove(
+                    "bg-black",
+                    "text-white"
+                );
+
+                btn.classList.add("bg-white");
+
+            });
+
+
+            // Add active style to selected button
+            button.classList.remove("bg-white");
+
+            button.classList.add(
+                "bg-black",
+                "text-white"
+            );
+
+        });
+
+    });
+
+
+    // =========================
+    // GENERATE JOKE
+    // =========================
+
+    async function generateJoke() {
+
+        // Loading state
+        joke.textContent = "Loading...";
+        answer.textContent = "";
+
+
+        try {
+
+            // Ask JokeAPI for a joke
+            const response = await fetch(
+                `https://v2.jokeapi.dev/joke/${selectedCategory}?safe-mode`
+            );
+
+
+            // Convert response to JSON
+            const data = await response.json();
+
+
+            // Check for API error
+            if (data.error) {
+
+                throw new Error(data.message);
+
+            }
+
+
+            // =========================
+            // TWO-PART JOKE
+            // =========================
+
+            if (data.type === "twopart") {
+
+                // Question / setup
+                joke.textContent = data.setup;
+
+                // Answer / punchline
+                answer.textContent = data.delivery;
+
+
+            }
+
+
+            // =========================
+            // SINGLE JOKE
+            // =========================
+
+            else {
+
+                joke.textContent = data.joke;
+
+                answer.textContent = "";
+
+            }
+
+
+            // =========================
+            // SAVE JOKE
+            // =========================
+
+            let newJoke;
+
+            if (data.type === "twopart") {
+
+                newJoke = {
+                    question: data.setup,
+                    answer: data.delivery
+                };
+
+            } else {
+
+                newJoke = {
+                    question: data.joke,
+                    answer: ""
+                };
+
+            }
+
+
+            jokes.push(newJoke);
+
+
+            // Move to newest joke
+            currentJoke = jokes.length - 1;
+
+
+        } catch (error) {
+
+            joke.textContent =
+                "Oops! The joke machine is broken.";
+
+            answer.textContent = "";
+
+            console.error(error);
+
+        }
+
+    }
+
+
+    // =========================
+    // GENERATE BUTTON
+    // =========================
+
+    generateBtn.addEventListener(
+        "click",
+        generateJoke
+    );
+
+
+    // =========================
+    // COPY JOKE
+    // =========================
+
+    copyBtn.addEventListener("click", async () => {
+
+        // No joke yet
+        if (currentJoke === -1) {
+
+            return;
+
+        }
+
+
+        const current = jokes[currentJoke];
+
+
+        // Combine question and answer
+        const fullJoke = current.answer
+            ? `${current.question}\n\n${current.answer}`
+            : current.question;
+
+
+        try {
+
+            await navigator.clipboard.writeText(fullJoke);
+
+
+            // Show copied icon
+            copyBtn.textContent = "✓";
+
+
+            // Return to clipboard icon
+            setTimeout(() => {
+
+                copyBtn.textContent = "📋";
+
+            }, 1500);
+
+
+        } catch (error) {
+
+            console.error(
+                "Could not copy joke:",
+                error
+            );
+
+        }
+
+    });
+
+
+    // =========================
+    // PREVIOUS JOKE
+    // =========================
+
+    previousBtn.addEventListener("click", () => {
+
+        // Make sure there is a previous joke
+        if (currentJoke > 0) {
+
+            currentJoke--;
+
+
+            const previousJoke =
+                jokes[currentJoke];
+
+
+            // Show previous question
+            joke.textContent =
+                previousJoke.question;
+
+
+            // Show previous answer
+            answer.textContent =
+                previousJoke.answer;
+
+        }
+
+    });
+
+
+</script>
+     </body>
+</html>
